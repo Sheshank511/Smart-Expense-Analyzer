@@ -10,10 +10,6 @@ transactions with the same messy characteristics real statements have:
 inconsistent merchant string formats, UPI reference noise, recurring
 patterns (salary, rent, bills), and injected anomalies for fraud detection.
 
-Usage:
-    python generate_transactions.py --months 12 --out transactions.csv
-"""
-
 import argparse
 import random
 import string
@@ -222,7 +218,7 @@ def generate_dataset(months: int, monthly_income: float, start_year=2025, start_
             month = 1
             year += 1
 
-    # Sprinkle anomalies across the whole dataset (roughly 1-2 per 2 months)
+    
     all_rows.extend(inject_anomalies(all_rows, n_anomalies=max(3, months // 2)))
 
     df = pd.DataFrame(all_rows)
