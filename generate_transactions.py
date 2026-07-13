@@ -1,4 +1,3 @@
-"""
 Synthetic Transaction Data Generator
 -------------------------------------
 Generates realistic Indian bank-statement-style transactions for the
