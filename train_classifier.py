@@ -6,9 +6,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
+from utils.preprocess import preprocess_transactions
 
 # Load dataset
-df = pd.read_csv("transactions.csv")
+df = preprocess_transactions(pd.read_csv("data/transactions.csv"), drop_duplicates=False)
 
 # Features and labels
 X = df["description"]
